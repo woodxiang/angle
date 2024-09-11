@@ -215,7 +215,7 @@ void *OpenSystemLibraryWithExtensionAndGetError(const char *libraryName,
         extraFlags = RTLD_NOLOAD;
     }
 
-    std::string fullPath = directory + libraryName;
+    std::string fullPath = ConcatenatePath(directory, libraryName);
     return OpenPosixLibrary(fullPath, extraFlags, errorOut);
 }
 
